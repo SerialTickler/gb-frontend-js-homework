@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      let arg1 = parseInt(prompt("Введите первое число"));
+      let arg2 = parseInt(prompt("Введите второе число"));
+      let operation = prompt(
+        "Введите математический знак операции: +, -, * или /"
+      );
+      // function getSum(arg1, arg2) {
+      //   return arg1 + arg2;
+      // }
+
+      let getSum = (arg1, arg2) => arg1 + arg2;
+
+      function getProduct(arg1, arg2) {
+        return arg1 * arg2;
+      }
+
+      function getDiference(arg1, arg2) {
+        return arg1 - arg2;
+      }
+
+      function getQuotient(arg1, arg2) {
+        return arg1 / arg2;
+      }
+
+      /**
+       * Вызывает функцию, которая выполняет одну из арифметических операций.
+       */
+      function mathOperation(arg1, arg2, operation) {
+        switch (operation) {
+          case "+":
+            return getSum(arg1, arg2);
+
+          case "*":
+            return getProduct(arg1, arg2);
+
+          case "-":
+            return getDiference(arg1, arg2);
+
+          case "/":
+            return getQuotient(arg1, arg2);
+
+          default:
+            alert("Введен неподдерживаемый оператор");
+            break;
+        }
+      }
+      let result = mathOperation(arg1, arg2, operation);
+      alert(result);
+    </script>
+  </body>
+</html>
+<!-- 
+  Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции (использовать switch) выполнить одну из арифметических операций (использовать функции из задания 4) и вернуть полученное значение.
+ -->
